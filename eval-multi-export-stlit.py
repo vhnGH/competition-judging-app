@@ -53,7 +53,7 @@ if "evaluations" not in st.session_state:
 # -------------------------------------------------
 # App Title & Tabs
 # -------------------------------------------------
-st.title("🏆 Competition Judging & Evaluation System")
+st.title("🏆 Capstone Mela - PESU - Judging App")
 
 tab1, tab2, tab3 = st.tabs(
     ["👥 Participant Information", "📝 Evaluation", "📊 Results & Export"]
