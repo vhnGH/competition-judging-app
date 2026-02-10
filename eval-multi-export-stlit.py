@@ -156,7 +156,7 @@ with tab3:
         # -------------------------
         fig, ax = plt.subplots()
         ax.bar(summary["Team Name"], summary["Total Score"], color="cornflowerblue")
-        ax.set_ylim(0, 5)
+        ax.set_ylim(0, 20)
         ax.set_ylabel("Score")
         plt.xticks(rotation=45)
         st.pyplot(fig)
