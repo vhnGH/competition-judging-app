@@ -117,10 +117,10 @@ with tab2:
             if submit_eval:
                 evaluation = {
                     "Team Name": team,
-                    "Novelty": novelty,
-                    "Scalability": scalability,
-                    "Social Impact": impact,
-                    "Feasibility": feasibility,
+                    "Creativity & Innovation": novelty,
+                    "Technical Complexity": scalability,
+                    "Use Cases": impact,
+                    "Impact on Society/Industry/Research": feasibility,
                 }
 
                 st.session_state.evaluations.append(evaluation)
@@ -139,10 +139,10 @@ with tab3:
         df = pd.DataFrame(st.session_state.evaluations)
 
         weights = {
-            "Novelty": 1.00,
-            "Scalability": 1.00,
-            "Social Impact": 1.00,
-            "Feasibility": 1.00,
+            "Creativity & Innovation": 1.00,
+            "Technical Complexity": 1.00,
+            "Use Cases": 1.00,
+            "Impact on Society/Industry/Research": 1.00,
         }
 
         df["Total Score"] = sum(df[c] * w for c, w in weights.items())
