@@ -108,9 +108,9 @@ with tab2:
             team = st.selectbox("Select Team", teams)
 
             novelty = st.radio("Creativity & Innovation", [1, 2, 3, 4, 5], horizontal=True)
-            scalability = st.radio("Technical Complexity", [1, 2, 3, 4, 5], horizontal=True)
-            impact = st.radio("Use Cases", [1, 2, 3, 4, 5], horizontal=True)
-            feasibility = st.radio("Impact on Society/Industry/Research", [1, 2, 3, 4, 5], horizontal=True)
+            complexity = st.radio("Technical Complexity", [1, 2, 3, 4, 5], horizontal=True)
+            usecases = st.radio("Use Cases", [1, 2, 3, 4, 5], horizontal=True)
+            socimpact = st.radio("Impact on Society/Industry/Research", [1, 2, 3, 4, 5], horizontal=True)
 
             submit_eval = st.form_submit_button("Submit Evaluation")
 
@@ -118,9 +118,9 @@ with tab2:
                 evaluation = {
                     "Team Name": team,
                     "Creativity & Innovation": novelty,
-                    "Technical Complexity": scalability,
-                    "Use Cases": impact,
-                    "Impact on Society/Industry/Research": feasibility,
+                    "Technical Complexity": complexity,
+                    "Use Cases": usecases,
+                    "Impact on Society/Industry/Research": socimpact,
                 }
 
                 st.session_state.evaluations.append(evaluation)
