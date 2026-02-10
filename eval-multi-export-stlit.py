@@ -11,7 +11,7 @@ from google.oauth2.service_account import Credentials
 # -------------------------------------------------
 # Page config
 # -------------------------------------------------
-st.set_page_config(page_title="Competition Judging App", layout="wide")
+st.set_page_config(page_title="Capstone Mela - PESU - Judging App", layout="wide")
 
 # -------------------------------------------------
 # Google Sheets Helpers
@@ -107,10 +107,10 @@ with tab2:
         with st.form("evaluation_form"):
             team = st.selectbox("Select Team", teams)
 
-            novelty = st.radio("Novelty", [1, 2, 3, 4, 5], horizontal=True)
-            scalability = st.radio("Scalability", [1, 2, 3, 4, 5], horizontal=True)
-            impact = st.radio("Social Impact", [1, 2, 3, 4, 5], horizontal=True)
-            feasibility = st.radio("Feasibility", [1, 2, 3, 4, 5], horizontal=True)
+            novelty = st.radio("Creativity & Innovation", [1, 2, 3, 4, 5], horizontal=True)
+            scalability = st.radio("Technical Complexity", [1, 2, 3, 4, 5], horizontal=True)
+            impact = st.radio("Use Cases", [1, 2, 3, 4, 5], horizontal=True)
+            feasibility = st.radio("Impact on Society/Industry/Research", [1, 2, 3, 4, 5], horizontal=True)
 
             submit_eval = st.form_submit_button("Submit Evaluation")
 
@@ -139,10 +139,10 @@ with tab3:
         df = pd.DataFrame(st.session_state.evaluations)
 
         weights = {
-            "Novelty": 0.30,
-            "Scalability": 0.25,
-            "Social Impact": 0.25,
-            "Feasibility": 0.20,
+            "Novelty": 1.00,
+            "Scalability": 1.00,
+            "Social Impact": 1.00,
+            "Feasibility": 1.00,
         }
 
         df["Total Score"] = sum(df[c] * w for c, w in weights.items())
